@@ -8,27 +8,34 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     
 </head>
-<body>
-    <header>
-        <h1>BATTLE OF THE PRESIDENTS RPG</h1>
+<body background="assets/images/battle.jpg">
+    <header class="row">
+        <h1 class="text-center offset-lg-3 col-lg-6">BATTLE OF THE PRESIDENTS RPG</h1>
     </header>
     <section>
-        <div id="presidents">
-            <h2>CHOOSE YOUR PRESIDENT</h2>
-            <div></div>
+        <div classe="row" id="presidents">
+            <h2 class="text-center offset-lg-3 col-lg-6">CHOOSE YOUR PRESIDENT</h2>
+            <div class="offset-lg-1 col-lg-10">
+                <img src="assets/images/Lincoln.jpg">
+                <img src="assets/images/washington.jpg">
+                <img src="assets/images/teddy.jpg">
+                <img src="assets/images/jefferson.jpg">
+            </div>
         </div>
-        <div id="opponents">
-            <h2>CHOOSE YOUR OPPONENT</h2>
-            <div></div>
-        </div>
-        <div id="userspresident">
-            <h2>YOUR PRESIDENT</h2>
-            <div></div>
-            <button id="attack">ATTACK</button>
-        </div>
-        <div id="enemypresident">
-            <h2>ENEMY PRESIDENT</h2>
-            <div></div>
+        <div class="row">
+            <div class="col-lg-4" id="opponents">
+                <h2>CHOOSE YOUR OPPONENT</h2>
+                <div></div>
+            </div>
+            <div class="col-lg-4" id="userspresident">
+                <h2>YOUR PRESIDENT</h2>
+                <div></div>
+                <button id="attack">ATTACK</button>
+            </div>
+            <div class="col-lg-4" id="enemypresident">
+                <h2>ENEMY PRESIDENT</h2>
+                <div></div>
+            </div>
         </div>
     </section>
 </body>
