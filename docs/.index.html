@@ -5,7 +5,11 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>   
+     <script src="assets/javascript/game.js"></script>
     
 </head>
 <body background="assets/images/battle.jpg">
@@ -16,10 +20,10 @@
         <div classe="row" id="presidents">
             <h2 class="text-center offset-lg-3 col-lg-6">CHOOSE YOUR PRESIDENT</h2>
             <div class="offset-lg-1 col-lg-10">
-                <img src="assets/images/Lincoln.jpg">
-                <img src="assets/images/washington.jpg">
-                <img src="assets/images/teddy.jpg">
-                <img src="assets/images/jefferson.jpg">
+                <img src="assets/images/Lincoln.jpg" id="abe">
+                <img src="assets/images/washington.jpg" id="george">
+                <img src="assets/images/teddy.jpg" id="teddy">
+                <img src="assets/images/jefferson.jpg" id="thomas">
             </div>
         </div>
         <div class="row">
@@ -27,14 +31,14 @@
                 <h2>CHOOSE YOUR OPPONENT</h2>
                 <div></div>
             </div>
-            <div class="col-lg-4" id="userspresident">
+            <div class="col-lg-4">
                 <h2>YOUR PRESIDENT</h2>
-                <div></div>
+                <div id="userspresident"></div>
                 <button id="attack">ATTACK</button>
             </div>
             <div class="col-lg-4" id="enemypresident">
                 <h2>ENEMY PRESIDENT</h2>
-                <div></div>
+                <div id="enemypresident"></div>
             </div>
         </div>
     </section>
