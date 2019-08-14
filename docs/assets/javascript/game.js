@@ -1,10 +1,26 @@
 $( document ).ready(function() {
 
     // variables 
-    const teddy = $("#teddy");
-    const abe = $("#abe");
-    const george = $("#george");
-    const thomas = $("#thomas");
+    let teddy = {
+        health:"180",
+        attack:"12",
+        counter:"20"
+    };
+    let abe =  {
+        health:"140",
+        attack:"22",
+        counter:"25"
+    };
+    let george =  {
+        health:"160",
+        attack:"18",
+        counter:"22"
+    };
+    let thomas =  {
+        health:"100",
+        attack:"14",
+        counter:"50"
+    };
     let chooseEnemy = false
 
     // functions
