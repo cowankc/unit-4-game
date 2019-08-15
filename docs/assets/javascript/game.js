@@ -1,22 +1,26 @@
 $( document ).ready(function() {
 
     // variables 
-    let teddy = {
+    let teddy = $("#teddy")
+    let teddyAttributes = {
         health:"180",
         attack:"12",
         counter:"20"
     };
-    let abe =  {
+    let abe = $("#abe")
+    let abeAttributes =  {
         health:"140",
         attack:"22",
         counter:"25"
     };
-    let george =  {
+    let george = $("#george")
+    let georgeAttributes =  {
         health:"160",
         attack:"18",
         counter:"22"
     };
-    let thomas =  {
+    let thomas = $("#thomas")
+    let thomasAttributes =  {
         health:"100",
         attack:"14",
         counter:"50"
@@ -49,9 +53,16 @@ $( document ).ready(function() {
         });
     }
    
+    attackFunction = function () {
+        $("#attack").on("click", function () {
+            if ($("#abe")) {
+            console.log("yes")}
+            
+        });
+    }
 
     selectPrez ()
-    
+    attackFunction ()
 
 
 });
