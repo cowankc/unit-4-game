@@ -26,43 +26,46 @@ $( document ).ready(function() {
         counter:"50"
     };
     let chooseEnemy = false
+    let chosenPrez = " " 
 
     // functions
-
+    
     selectPrez = function () {
+        
         const prez = document.getElementsByClassName('prez');
         $(prez).on("click", function (selectedPrez) {
-            const currentPrez = $(`#${selectedPrez.currentTarget.id}`);
-            const classArray = [...selectedPrez.currentTarget.classList];
-            currentPrez.addClass('green-border');
-            currentPrez.removeClass('blue-border');
-            $(prez).appendTo("#opponents");
-            $(prez).addClass('red-border');
-            currentPrez.appendTo("#userspresident");
-            chooseEnemy = true;
-            if(chooseEnemy =true) {
-                $(prez).on("click", function (selectedPrez2) {
-                    const currentPrez2 = $(`#${selectedPrez2.currentTarget.id}`);
-                    const classArray = [...selectedPrez.currentTarget.classList];
-                    currentPrez2.addClass('orange-border');
-                    currentPrez2.removeClass('red-border');
-                    currentPrez2.appendTo("#enemypresident");
-                    currentPrez.appendTo("#userspresident");
-                });
-               }
+            if (chooseEnemy == false) {
+                const currentPrez = $(`#${selectedPrez.currentTarget.id}`);
+                const classArray = [...selectedPrez.currentTarget.classList];
+                currentPrez.addClass('green-border');
+                currentPrez.removeClass('blue-border');
+                $(prez).appendTo("#opponents");
+                $(prez).addClass('red-border');
+                currentPrez.appendTo("#userspresident");
+                chosenPrez = currentPrez
+                console.log(chosenPrez)
+                chooseEnemy = true;
+                return chosenPrez
+            }
+            else if (chooseEnemy == true) {
+                const prez = document.getElementsByClassName('red-border');
+                const currentPrez = $(`#${selectedPrez.currentTarget.id}`);
+                const classArray = [...selectedPrez.currentTarget.classList];
+                currentPrez.addClass('orange-border');
+                currentPrez.removeClass('red-border');
+                currentPrez.appendTo("#enemypresident");
+            }
         });
     }
-   
+       
     attackFunction = function () {
         $("#attack").on("click", function () {
-            if ($("#abe")) {
-            console.log("yes")}
-            
+            chosenPrez
         });
     }
-
-    selectPrez ()
-    attackFunction ()
-
-
+    
+    $("#choices").on("click", selectPrez());
+    // $("#opponents").on("click", selectOpponent ());
+    console.log(chooseEnemy);
+    $("#attack").on("click", attackFunction());
 });
