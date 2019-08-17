@@ -27,6 +27,7 @@ $( document ).ready(function() {
     };
     let chooseEnemy = false
 
+    let enemiesDefeated = 3
     // functions
     
     selectPrez = function () {
@@ -66,8 +67,6 @@ $( document ).ready(function() {
                 attack: 0,
                 counter: 0
             };
-            
-            let enemiesDefeated = 0
 
             let baseAttack = 0;
 
@@ -108,17 +107,22 @@ $( document ).ready(function() {
                 enemyAttributes = teddyAttributes
             }
             
-            userAttributes.health = userAttributes.health - enemyAttributes.counter
             enemyAttributes.health = enemyAttributes.health - userAttributes.attack
+            if (enemyAttributes.health > 0) {
+                userAttributes.health = userAttributes.health - enemyAttributes.counter
+            }
             userAttributes.attack = userAttributes.attack + baseAttack
             $("#userHealth").html(userAttributes.health)
             $("#userAttack").html(userAttributes.attack)
             $("#enemyHealth").html(enemyAttributes.health)
             $("#enemyAttack").html(enemyAttributes.counter)
-            if (enemyAttributes.health <= 0) {
+            if (enemyAttributes.health <= 0 && enemiesDefeated > 0) {
                 $("#enemypresident").empty();
                 alert("You've defeated your opponent! Chose the next enemy")
-                enemiesDefeated + 1
+                enemiesDefeated--
+            }
+            if (enemiesDefeated === 0) {
+                alert("NICE JOB! YOU WON!")
             }
             if (userAttributes.health <= 0) {
                 $("#enemypresident").empty();
@@ -126,11 +130,7 @@ $( document ).ready(function() {
                 $("#opponents").empty();
                 alert("You weren't strong enough, try gain")
             }
-            if (enemiesDefeated = 3) {
-                alert("NICE JOB! YOU WON!")
-            }
             console.log(enemiesDefeated)
-
         });
     }
 
