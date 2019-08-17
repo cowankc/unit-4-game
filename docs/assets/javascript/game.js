@@ -55,7 +55,7 @@ $( document ).ready(function() {
     }
        
     attackFunction = function () {
-        $("#attack").on("click", function () {
+     $("#attack").on("click", function () {
             let userAttributes = {
                 health: 0,
                 attack: 0,
@@ -66,21 +66,30 @@ $( document ).ready(function() {
                 attack: 0,
                 counter: 0
             };
+            
+            let enemiesDefeated = 0
+
+            let baseAttack = 0;
+
             if ($("#teddy").hasClass('green-border')) {
                 console.log("teddy")
                 userAttributes = teddyAttributes
+                baseAttack = 12
             }
             if ($("#george").hasClass('green-border')) {
                 console.log("george")
                 userAttributes = georgeAttributes
+                baseAttack = 18
             }
             if ($("#thomas").hasClass('green-border')) {
                 console.log("thoms")
                 userAttributes = thomasAttributes
+                baseAttack = 14
             }
             if ($("#abe").hasClass('green-border')) {
                 console.log("abe")
                 userAttributes = abeAttributes
+                baseAttack = 22
             }
             if ($("#abe").hasClass('orange-border')) {
                 console.log("vs abe")
@@ -98,18 +107,35 @@ $( document ).ready(function() {
                 console.log("vs teddy")
                 enemyAttributes = teddyAttributes
             }
+            
+            userAttributes.health = userAttributes.health - enemyAttributes.counter
+            enemyAttributes.health = enemyAttributes.health - userAttributes.attack
+            userAttributes.attack = userAttributes.attack + baseAttack
             $("#userHealth").html(userAttributes.health)
             $("#userAttack").html(userAttributes.attack)
             $("#enemyHealth").html(enemyAttributes.health)
             $("#enemyAttack").html(enemyAttributes.counter)
-            userAttributes.health = userAttributes.health - enemyAttributes.counter 
-            enemyAttributes.health = enemyAttributes.health - userAttributes.attack
-             
+            if (enemyAttributes.health <= 0) {
+                $("#enemypresident").empty();
+                alert("You've defeated your opponent! Chose the next enemy")
+                enemiesDefeated + 1
+            }
+            if (userAttributes.health <= 0) {
+                $("#enemypresident").empty();
+                $("#userspresident").empty();
+                $("#opponents").empty();
+                alert("You weren't strong enough, try gain")
+            }
+            if (enemiesDefeated = 3) {
+                alert("NICE JOB! YOU WON!")
+            }
+            console.log(enemiesDefeated)
+
         });
     }
+
     
-    $("#choices").on("click", selectPrez());
-    // $("#opponents").on("click", selectOpponent ());
+    selectPrez()
     console.log(chooseEnemy);
-    $("#attack").on("click", attackFunction());
+    attackFunction()
 });
