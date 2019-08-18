@@ -116,19 +116,22 @@ $( document ).ready(function() {
             $("#userAttack").html(userAttributes.attack)
             $("#enemyHealth").html(enemyAttributes.health)
             $("#enemyAttack").html(enemyAttributes.counter)
-            if (enemyAttributes.health <= 0 && enemiesDefeated > 0) {
+
+            if (enemyAttributes.health <= 0) {
                 $("#enemypresident").empty();
                 alert("You've defeated your opponent! Chose the next enemy")
                 enemiesDefeated--
-            }
-            if (enemiesDefeated === 0) {
-                alert("NICE JOB! YOU WON!")
+                $("#enemyHealth").html(0)
+                $("#enemyAttack").html(0)
             }
             if (userAttributes.health <= 0) {
                 $("#enemypresident").empty();
                 $("#userspresident").empty();
                 $("#opponents").empty();
                 alert("You weren't strong enough, try gain")
+            }
+            if (enemiesDefeated === 0) {
+                alert("NICE JOB! YOU WON!")
             }
             console.log(enemiesDefeated)
         });

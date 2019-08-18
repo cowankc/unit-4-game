@@ -17,16 +17,28 @@
         <h1 class="text-center offset-lg-3 col-lg-6">BATTLE OF THE PRESIDENTS RPG</h1>
     </header>
     <section>
-        <div classe="row" id="presidents" height=15vh width= 100%>
+        <div classe="row" id="presidents">
             <h2 class="text-center offset-lg-3 col-lg-6">CHOOSE YOUR PRESIDENT</h2>
-            <div class="offset-lg-1 col-lg-10" id="choices">
-                <img src="assets/images/Lincoln.jpg" id="abe" class="prez blue-border">
-                <img src="assets/images/washington.jpg" id="george" class="prez blue-border">
-                <img src="assets/images/teddy.jpg" id="teddy" class="prez blue-border">
-                <img src="assets/images/jefferson.jpg" id="thomas" class="prez blue-border">
+            <div class="row" id="choices">
+                <div class="offset-lg-2 col-lg-2 blue-border prez " id="abe">
+                    <img src="assets/images/Lincoln.jpg">
+                    <h5 class="bottom-left text-white" >ABE: 140</h5>
+                </div>
+                <div class="col-lg-2 prez blue-border" id="george">
+                    <img src="assets/images/washington.jpg">
+                    <h5 class="bottom-left text-white">George: 160</h5>
+                </div>
+                <div class="col-lg-2 prez blue-border" id="teddy">
+                    <img src="assets/images/teddy.jpg">
+                    <h5 class="bottom-left text-white">Teddy: 180</h5>
+                </div>
+                <div class="col-lg-2 prez blue-border"  id="thomas">
+                    <img src="assets/images/jefferson.jpg" >
+                    <h5 class="bottom-left text-white">Thomas: 100</h5>
+                </div>
             </div>
         </div>
-        <div class="row" height=15vh width= 100%>
+        <div class="row" >
             <div class="col-lg-4" id="opponents">
                 <h2>CHOOSE YOUR OPPONENT</h2>
                 <div id="opponents"></div>
@@ -42,17 +54,17 @@
             </div>
         </div>
     </section>
-    <footer class="row" height=15vh width= 100%>
-        <div class="offset-lg-3 col-lg-3">
-            <h3>HEALTH</h3>
+    <footer class="row h-25">
+        <div class="offset-lg-3 col-lg-3 bg-secondary text-white" height= 200px width= 200px>
+            <h3>HEALTH: </h3>
             <h3 id="userHealth"></h3>
-            <h3>ATTACK POWER</h3>
+            <h3>ATTACK POWER: </h3>
             <h3 id="userAttack"></h3>
         </div>
-        <div class="offset-lg-3 col-lg-3">
-            <h4>ENEMY HEALTH</h4>
+        <div class="offset-lg-1 col-lg-3 bg-secondary text-white" height= 200px width= 200px>
+            <h4>ENEMY HEALTH: </h4>
             <h4 id="enemyHealth"></h4>
-            <h4>ENEMY ATTACK</h4>
+            <h4>ENEMY ATTACK: </h4>
             <h4 id="enemyAttack"></h4>
         </div>
     </footer>
