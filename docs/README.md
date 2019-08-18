@@ -1,0 +1,2 @@
+This is a RPG type mini-game created using jquery and javascript. You start by choosing you character from a list of 4. Then choose your opponent and simply hit the attack button to battle. Your character will deal daage first, followed by the enemy character. After every attack your character will recieve a 
+bonus of its original attack power added on. Once you defeat all the enemies, you win the game! This was my first project I created using jquery and was worked on soley by myself!
