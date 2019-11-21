@@ -12,7 +12,7 @@
      <script src="assets/javascript/game.js"></script>
     
 </head>
-<body background="assets/images/battle.jpg">
+<body>
     <header class="row">
         <h1 class="text-center offset-lg-3 col-lg-6">BATTLE OF THE PRESIDENTS RPG</h1>
     </header>
@@ -39,27 +39,32 @@
             </div>
         </div>
         <div class="row" >
-            <div class="col-lg-4" id="opponents">
+            <div class="offset-lg-1 col-lg-3" id="opponents">
                 <h2>CHOOSE YOUR OPPONENT</h2>
                 <div id="opponents"></div>
             </div>
-            <div class="col-lg-4">
+            <div class="offset-lg-1 col-lg-3">
                 <h2>YOUR PRESIDENT</h2>
                 <div id="userspresident"></div>
                 <button id="attack">ATTACK</button>
             </div>
-            <div class="col-lg-4" id="enemypresident">
+            <div class="offset-lg-1 col-lg-3" id="enemypresident">
                 <h2>ENEMY PRESIDENT</h2>
                 <div id="enemypresident"></div>
             </div>
         </div>
     </section>
     <footer class="row h-25">
-        <div class="offset-lg-3 col-lg-3 bg-secondary text-white" height= 200px width= 200px>
+        <div class="offset-lg-1 col-lg-3 bg-secondary text-white" height= 200px width= 200px>
             <h3>HEALTH: </h3>
             <h3 id="userHealth"></h3>
             <h3>ATTACK POWER: </h3>
             <h3 id="userAttack"></h3>
+        </div>
+        <div class="offset-lg-1 col-lg-2 bg-secondary text-white" height= 200px width= 200px>
+            <h4>ENEMIES DEFEATED: </h4>
+            <h4 id="enemydeaths"></h4>
+            
         </div>
         <div class="offset-lg-1 col-lg-3 bg-secondary text-white" height= 200px width= 200px>
             <h4>ENEMY HEALTH: </h4>

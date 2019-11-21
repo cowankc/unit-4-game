@@ -29,11 +29,14 @@ $( document ).ready(function() {
 
     let enemiesDefeated = 3
 
+    let counter = 0
+
 
     // functions
     selectPrez = function () {
         const prez = document.getElementsByClassName('prez');
         $(prez).on("click", function (selectedPrez) {
+            $("#enemydeaths").html(counter)
             if (chooseEnemy == false) {
                 const currentPrez = $(`#${selectedPrez.currentTarget.id}`);
                 const classArray = [...selectedPrez.currentTarget.classList];
@@ -113,6 +116,7 @@ $( document ).ready(function() {
                 $("#enemypresident").empty();
                 alert("You've defeated your opponent! Chose the next enemy")
                 enemiesDefeated--
+                counter++
                 $("#enemyHealth").html(0)
                 $("#enemyAttack").html(0)
             }
@@ -120,7 +124,8 @@ $( document ).ready(function() {
                 $("#enemypresident").empty();
                 $("#userspresident").empty();
                 $("#opponents").empty();
-                alert("You weren't strong enough, try gain")
+                alert("You weren't strong enough, try again")
+                location.reload(true);
             }
             if (enemiesDefeated === 0) {
                 $("#enemypresident").html("Congrats you Won!")
